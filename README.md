@@ -1,4 +1,4 @@
-# Koala - Web Engineering Challenge
+# Koala - Frontend Engineering Challenge
 
 ### The Backstory...
 A high-profile client has hired your company to build a countdown clock web app to help them keep track of an internal deadline. Since this deadline keeps changing, the countdown must be able to be reset and adjusted as necessary.
