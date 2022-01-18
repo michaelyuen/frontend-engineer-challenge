@@ -1,8 +1,8 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
 // Components
-import { Countdown } from './components/countdown';
+import { Countdown } from "./components/countdown";
 
 interface StateProps {
   theme: any;
@@ -11,28 +11,33 @@ interface StateProps {
 class App extends React.Component {
   state: StateProps = {
     theme: null,
-  }
+  };
   componentDidMount() {
-    fetch("https://api.koala.io/marketing/v1/device-configurations/alias/web-config", {
-      method: 'GET',
-      headers: {
-        'X-Organization-Id': 1,
+    fetch(
+      "https://api.koala.io/marketing/v1/device-configurations/alias/web-config",
+      {
+        method: "GET",
+        headers: {
+          "X-Organization-Id": "1",
+        },
       }
-    })
-      .then(res => res.json())
+    )
+      .then((res) => res.json())
       .then(
         (result) => this.setState({ theme: result }),
-        (error) => console.log(error))
+        (error) => console.log(error)
+      );
   }
   render() {
-    const data = this.state.theme && this.state.theme.data && this.state.theme.data.data;
+    const data =
+      this.state.theme && this.state.theme.data && this.state.theme.data.data;
     return (
       this.state.theme && (
         <ThemeProvider theme={data}>
           <Countdown />
         </ThemeProvider>
       )
-    )
+    );
   }
 }
 
