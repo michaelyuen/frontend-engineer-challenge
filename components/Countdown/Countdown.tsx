@@ -1,7 +1,5 @@
-import React from "react";
 import { StyledCountdown } from "./styles";
 
-// Write your countdown code in this component
 export const Countdown = () => {
   return (
     <StyledCountdown>
