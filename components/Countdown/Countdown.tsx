@@ -1,19 +1,15 @@
-import { StyledCountdown } from "./styles";
+import { CountdownContainer } from "./styles";
 
-export const Countdown = () => {
+export interface CountdownProps {
+  deadline: string;
+  name: string;
+}
+
+export const Countdown: React.FC<CountdownProps> = ({ deadline, name }) => {
   return (
-    <StyledCountdown>
-      <div
-        style={{
-          border: ".5px solid gray",
-          width: 50,
-          borderRadius: "3px",
-          background: "#EFEFEF",
-          padding: 3,
-        }}
-      >
-        <div onClick={() => alert("TODO")}>Start</div>
-      </div>
-    </StyledCountdown>
+    <CountdownContainer>
+      <h1>Countdown to {name}</h1>
+      <p>{deadline}</p>
+    </CountdownContainer>
   );
 };

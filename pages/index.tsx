@@ -1,9 +1,44 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import { Countdown } from "../components";
+import { useState } from "react";
+import { Countdown, DeadlineForm } from "../components";
 import { GlobalStyle, Theme } from "../styles/GlobalStyle";
+import { getFirstQueryParam, setQueryParameters } from "../utils";
 
-const Home: NextPage<NormalizedConfig> = ({ config, theme }) => {
+interface HomeProps {
+  config: NormalizedConfig["config"];
+  initialDeadline: string;
+  initialName: string;
+  theme: NormalizedConfig["theme"];
+}
+
+const Home: NextPage<HomeProps> = ({
+  config,
+  initialDeadline,
+  initialName,
+  theme,
+}) => {
+  const [formData, setFormData] = useState({
+    name: initialName,
+    deadline: initialDeadline,
+  });
+  const [isCountdownStarted, setCountdownStarted] = useState(
+    initialDeadline && initialName
+  );
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const {
+      target: { name, value },
+    } = event;
+    setFormData((data) => ({ ...data, [name]: value }));
+  };
+
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setQueryParameters(formData);
+    setCountdownStarted(true);
+  };
+
   return (
     <>
       <Head>
@@ -16,8 +51,18 @@ const Home: NextPage<NormalizedConfig> = ({ config, theme }) => {
       </Head>
       <GlobalStyle theme={theme} />
       <main>
-        <h1>When is the deadline?</h1>
-        <Countdown />
+        {!isCountdownStarted && (
+          <DeadlineForm
+            deadlineValue={formData.deadline}
+            disabled={!(formData.deadline && formData.name)}
+            nameValue={formData.name}
+            onChange={onChange}
+            onSubmit={onSubmit}
+          />
+        )}
+        {isCountdownStarted && (
+          <Countdown deadline={formData.deadline} name={formData.name} />
+        )}
       </main>
     </>
   );
@@ -31,6 +76,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     "public, s-maxage=10, stale-while-revalidate=59"
   );
 
+  const initialName = getFirstQueryParam(context.query?.name ?? "");
+  // TODO(my): validate the actual value
+  const initialDeadline = getFirstQueryParam(context.query?.deadline ?? "");
+
   try {
     const res = await fetch(
       "https://api.koala.io/marketing/v1/device-configurations/alias/web-config",
@@ -43,12 +92,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     );
     const config = await res.json();
     const normalizedConfig = normalizeConfig(config);
-    return { props: normalizedConfig };
+    return { props: { initialName, initialDeadline, ...normalizedConfig } };
   } catch (e) {
     console.error(e);
   }
 
-  return { props: {} };
+  return { props: { initialName, initialDeadline } };
 };
 
 interface Config {

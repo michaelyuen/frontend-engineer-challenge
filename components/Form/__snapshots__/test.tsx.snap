@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form matches snapshot 1`] = `
+<div>
+  <form
+    aria-label="mock aria label"
+    class="sc-bcXHqe"
+    name="Mock Name"
+  />
+</div>
+`;
