@@ -23,7 +23,7 @@ const Home: NextPage<HomeProps> = ({
     deadline: initialDeadline,
   });
   const [isCountdownStarted, setCountdownStarted] = useState(
-    initialDeadline && initialName
+    !!(initialDeadline && initialName)
   );
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
