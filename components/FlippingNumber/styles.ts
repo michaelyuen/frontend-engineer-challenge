@@ -34,6 +34,11 @@ export const FlippingNumberContainer = styled.div`
   }
 `;
 
+export interface NumberContainerProps {
+  animationDuration: number;
+  shouldAnimate: boolean;
+}
+
 export const NumberContainer = styled.div`
   color: hsl(345, 95%, 68%);
   font-size: 70px;
@@ -74,7 +79,10 @@ export const NumberContainer = styled.div`
 
       &.next {
         &:before {
-          animation: ${({ animationDuration, shouldAnimate }) =>
+          animation: ${({
+            animationDuration,
+            shouldAnimate,
+          }: NumberContainerProps) =>
             shouldAnimate
               ? css`
                   ${show} ${animationDuration /
@@ -162,7 +170,10 @@ export const NumberContainer = styled.div`
         transform: rotateX(0deg);
 
         &:before {
-          animation: ${({ animationDuration, shouldAnimate }) =>
+          animation: ${({
+            animationDuration,
+            shouldAnimate,
+          }: NumberContainerProps) =>
             shouldAnimate
               ? css`
                   ${show} ${animationDuration}ms ease-in forwards

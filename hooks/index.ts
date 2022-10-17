@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import { DeadlineValue } from "../components";
 import { getTimeRemaining, isPast } from "../utils";
 
-const defaultTimeRemaining = {
+const defaultTimeRemaining: Duration = {
   hours: 0,
   minutes: 0,
   seconds: 0,
 };
 
-export const useCountdown = (endDate) => {
+export const useCountdown = (endDate: DeadlineValue) => {
   const isInPast = isPast(endDate);
   const initialTimeRemaining = isInPast
     ? defaultTimeRemaining

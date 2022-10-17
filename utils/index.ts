@@ -1,10 +1,11 @@
 import { intervalToDuration, isPast as isPastDateFns } from "date-fns";
+import { DeadlineValue } from "../components";
 import { Theme } from "../styles/GlobalStyle";
 
 export const getFirstQueryParam = (qp: string | string[]) =>
   Array.isArray(qp) ? qp[0] : qp;
 
-export const getTimeRemaining = (endDate) => {
+export const getTimeRemaining = (endDate: DeadlineValue) => {
   const dur = intervalToDuration({
     start: new Date(),
     end: new Date(endDate),
@@ -16,7 +17,8 @@ export const getTimeRemaining = (endDate) => {
   return dur;
 };
 
-export const isPast = (deadline: string) => isPastDateFns(new Date(deadline));
+export const isPast = (deadline: DeadlineValue) =>
+  isPastDateFns(new Date(deadline));
 
 export interface Config {
   data: {

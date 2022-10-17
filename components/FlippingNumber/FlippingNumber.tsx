@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 import { FlippingNumberContainer, NumberContainer } from "./styles";
 
 export interface FlippingNumberProps {
-  animationDuration: number;
+  animationDuration?: number;
   label?: string;
-  number: number;
+  number?: number;
 }
 
 export const FlippingNumber: React.FC<FlippingNumberProps> = ({
-  animationDuration,
+  animationDuration = 1000,
   label,
   number,
 }) => {

@@ -32,10 +32,9 @@ export const Countdown: React.FC<CountdownProps> = ({
         <NumbersContainer>
           {Object.keys(timeRemaining).map((key) => (
             <FlippingNumber
-              animationDuration={1000}
               key={key}
               label={key}
-              number={timeRemaining[key]}
+              number={timeRemaining[key as keyof Duration]}
             />
           ))}
         </NumbersContainer>

@@ -1,7 +1,12 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
-import { Countdown, DeadlineForm, DeadlineFormData } from "../components";
+import {
+  Countdown,
+  DeadlineForm,
+  DeadlineFormData,
+  DeadlineValue,
+} from "../components";
 import { GlobalStyle } from "../styles/GlobalStyle";
 import {
   getFirstQueryParam,
@@ -27,7 +32,7 @@ const Home: NextPage<HomeProps> = ({
     deadlineValue: initialDeadlineValue,
   });
   const resetFormData = () =>
-    setFormData({ deadlineName: "", deadlineValue: "" });
+    setFormData({ deadlineName: "", deadlineValue: "" as DeadlineValue });
   const [isCountdownStarted, setCountdownStarted] = useState(
     !!(initialDeadlineName && initialDeadlineValue)
   );

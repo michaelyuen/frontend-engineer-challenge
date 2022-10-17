@@ -5,9 +5,15 @@ import { FormProps } from "../Form";
 import { Input, InputProps } from "../Input";
 import { isPast } from "../../utils";
 
+/**
+ * Using TypeScript Template Literal Type: https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
+ * Expected format: 2024-10-16T17:47
+ */
+export type DeadlineValue =
+  `${number}${number}${number}${number}-${number}${number}-${number}${number}T${number}${number}:${number}${number}`;
 export type DeadlineFormData = {
   deadlineName: string;
-  deadlineValue: string;
+  deadlineValue: DeadlineValue;
 };
 
 export interface DeadlineFormProps extends DeadlineFormData {
@@ -37,7 +43,7 @@ export const DeadlineForm: React.FC<DeadlineFormProps> = ({
     }
   }, [deadlineValue]);
 
-  const isDisabled = !(deadlineName && deadlineValue) || deadlineValueError;
+  const isDisabled = !(deadlineName && deadlineValue) || !!deadlineValueError;
 
   return (
     <DeadlineFormContainer
