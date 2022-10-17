@@ -11,7 +11,16 @@ export const CountdownContainer = styled.div`
   }
 
   h1 {
+    font-size: 3em;
     margin: 0;
+
+    @media (min-width: ${breakpoints.md}) {
+      font-size: 4em;
+    }
+  }
+
+  p {
+    margin-bottom: 2em;
   }
 `;
 

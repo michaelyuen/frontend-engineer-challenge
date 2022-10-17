@@ -28,6 +28,7 @@ export const FlippingNumberContainer = styled.div`
   z-index: 1;
 
   p {
+    font-weight: bold;
     letter-spacing: 5px;
     margin-top: 1em;
     text-transform: uppercase;
@@ -40,7 +41,7 @@ export interface NumberContainerProps {
 }
 
 export const NumberContainer = styled.div`
-  color: hsl(345, 95%, 68%);
+  color: var(--flipping-number-color);
   font-size: 70px;
   height: 100px;
   line-height: 100px;
@@ -70,11 +71,10 @@ export const NumberContainer = styled.div`
 
     &.top {
       backface-visibility: hidden;
-      background: linear-gradient(to bottom, rgb(44, 43, 70), rgb(59, 60, 95));
+      background: var(--flipping-number-background-color-top);
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
-      box-shadow: 0px -2px 5px rgb(26, 26, 37), inset 0 2px rgba(0, 0, 0, 0.9),
-        inset 0 3px 0 rgba(255, 255, 255, 0.4);
+      box-shadow: var(--flipping-number-box-shadow-top);
       height: 50%;
 
       &.next {
@@ -106,15 +106,10 @@ export const NumberContainer = styled.div`
 
     &.bottom {
       align-items: flex-end;
-      background: linear-gradient(
-          rgba(188, 167, 216, 0.1),
-          rgba(72, 66, 95, 0.1) 50%,
-          rgb(52, 53, 81)
-        ),
-        rgb(52, 53, 81);
+      background: var(--flipping-number-background-color-bottom);
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
-      box-shadow: 0px 7px 2px rgb(26, 26, 37);
+      box-shadow: var(--flipping-number-box-shadow-bottom);
 
       &.current {
         height: 50%;

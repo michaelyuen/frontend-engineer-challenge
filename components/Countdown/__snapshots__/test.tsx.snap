@@ -3,7 +3,7 @@
 exports[`Countdown matches snapshot for a deadline in the past 1`] = `
 <div>
   <div
-    class="sc-bcXHqe ghGHRX"
+    class="sc-bcXHqe ktLLPh"
   >
     <h1>
       Take Home Test
@@ -15,10 +15,10 @@ exports[`Countdown matches snapshot for a deadline in the past 1`] = `
       class="sc-gswNZR gYyeuC"
     >
       <div
-        class="sc-jSUZER hDXOka"
+        class="sc-jSUZER czOrtm"
       >
         <div
-          class="sc-gKPRtg iWYzYk"
+          class="sc-gKPRtg bPprQx"
         >
           <div
             class="top next"
@@ -50,10 +50,10 @@ exports[`Countdown matches snapshot for a deadline in the past 1`] = `
         </p>
       </div>
       <div
-        class="sc-jSUZER hDXOka"
+        class="sc-jSUZER czOrtm"
       >
         <div
-          class="sc-gKPRtg iWYzYk"
+          class="sc-gKPRtg bPprQx"
         >
           <div
             class="top next"
@@ -85,10 +85,10 @@ exports[`Countdown matches snapshot for a deadline in the past 1`] = `
         </p>
       </div>
       <div
-        class="sc-jSUZER hDXOka"
+        class="sc-jSUZER czOrtm"
       >
         <div
-          class="sc-gKPRtg iWYzYk"
+          class="sc-gKPRtg bPprQx"
         >
           <div
             class="top next"
@@ -129,7 +129,7 @@ exports[`Countdown matches snapshot for a deadline in the past 1`] = `
       Use the Reset button to update your deadline.
     </p>
     <button
-      class="sc-eDvSVe lmyjav"
+      class="sc-eDvSVe zygpI"
       type="button"
     >
       Reset

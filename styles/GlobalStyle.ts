@@ -18,10 +18,6 @@ export const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   :root {
-    /* --card-background-color: #f6f8fa;
-    --error-color: #f85149;
-    --link-color: #0969da; */
-
     ${({ theme }: Props) => `
       --background-color: linear-gradient(#bdd7f3, #c2d5e1, #ffcb9a, #fea58a, #ff5722);
       --background-image: url("/pattern-hills.svg");
@@ -29,11 +25,17 @@ export const GlobalStyle = createGlobalStyle`
       --border-radius: ${theme.borderRadius};
       --color: ${theme.fontColor};
       --error-color: #f85149;
-      --fontFamily: ${theme.fontFamily};
+      --flipping-number-background-color-top: linear-gradient(to bottom,rgb(54 110 144),rgb(109 155 178));
+      --flipping-number-background-color-bottom: linear-gradient( rgba(188,167,216,0.1), rgba(72,66,95,0.1) 50%, rgb(73 152 202) ), rgb(110 181 202);
+      --flipping-number-box-shadow-top: 0px -2px 5px rgb(175 214 217), inset 0 2px rgb(25 160 199 / 90%), inset 0 3px 0 rgb(255 255 255 / 40%);
+      --flipping-number-box-shadow-bottom: 0px 7px 2px rgb(54 109 130);
+      --flipping-number-color: #e8ad80;
+      // --fontFamily: ${theme.fontFamily};
+      --fontFamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       // --fontSize: ${theme.fontSize};
       --fontSize: 16px;
       --logo: url("/koala-logo-light.png");
-      --warning-color: yellow;
+      --warning-color: #fff8b7;
     `}
   }
 
@@ -45,10 +47,13 @@ export const GlobalStyle = createGlobalStyle`
       --border-radius: 6px;
       --color: #c9d1d9;
       --error-color: #f85149;
+      --flipping-number-background-color-top: linear-gradient(to bottom, rgb(44, 43, 70), rgb(59, 60, 95));
+      --flipping-number-background-color-bottom: linear-gradient(rgba(188, 167, 216, 0.1), rgba(72, 66, 95, 0.1) 50%, rgb(52, 53, 81)), rgb(52, 53, 81);
+      --flipping-number-box-shadow-top: 0px -2px 5px rgb(26, 26, 37), inset 0 2px rgba(0, 0, 0, 0.9), inset 0 3px 0 rgba(255, 255, 255, 0.4);
+      --flipping-number-box-shadow-bottom: 0px 7px 2px rgb(26, 26, 37);
+      --flipping-number-color: #fb6087;
       --logo: url("/koala-logo-dark.png");
-      --warning-color: yellow;
-      /* --card-background-color: #161b22;
-      --link-color: #58a6ff; */
+      --warning-color: #fff8b7;
     }
   }
 
@@ -82,30 +87,4 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     padding: 2em;
   }
-
-  /* a {
-    color: var(--link-color);
-    text-decoration: none;
-    
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:focus {
-      border-radius: var(--border-radius);
-      box-shadow: 0 0 0 3px #58a6ff;
-      outline: none;
-    }
-  }
-
-  input {
-    color: var(--color);
-    background-color: var(--card-background-color);
-
-    &:focus {
-      border-radius: var(--border-radius);
-      box-shadow: 0 0 0 3px #58a6ff;
-      outline: none;
-    }
-  } */
 `;

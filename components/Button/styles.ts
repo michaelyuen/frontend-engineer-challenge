@@ -9,7 +9,14 @@ export const ButtonContainer = styled.button`
   border-radius: var(--border-radius);
   border: 1px solid #0d6cf2;
 
+  &:focus {
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 0 3px #58a6ff;
+    outline: none;
+  }
+
   &[disabled] {
+    border-color: grey;
     background: grey;
     cursor: not-allowed;
   }

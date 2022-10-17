@@ -43,10 +43,3 @@ This codebase uses React, Typescript, and Styled Components as they are the prim
    ```
 
 4. Once it's done compiling, view the site at: [`http://localhost:3000/`](http://localhost:3000/).
-
-## To Do
-
-- [ ] skeleton for flipping numbers so content doesn't shift
-- [ ] unit tests
-- [ ] take another pass at theming
-- [ ] do all components spread props?
