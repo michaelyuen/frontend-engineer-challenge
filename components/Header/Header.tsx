@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       {/* TODO(my): Replace with Image, switching logo src based on theme */}
-      <div aria-label="Koala logo" />
+      <div aria-label="Koala logo" role="img" />
       <p>
         <span>FE Coding Challenge</span>
         <span>Frontend Engineer Coding Challenge</span>

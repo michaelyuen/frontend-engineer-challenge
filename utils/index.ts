@@ -5,13 +5,20 @@ import { Theme } from "../styles/GlobalStyle";
 export const getFirstQueryParam = (qp: string | string[]) =>
   Array.isArray(qp) ? qp[0] : qp;
 
-export const getTimeRemaining = (endDate: DeadlineValue) => {
+interface GetTimeRemainingParams {
+  startDate?: Date;
+  endDate: DeadlineValue;
+}
+
+export const getTimeRemaining = ({
+  startDate = new Date(),
+  endDate,
+}: GetTimeRemainingParams) => {
   const dur = intervalToDuration({
-    start: new Date(),
+    start: startDate,
     end: new Date(endDate),
   });
   if (dur.years === 0) delete dur.years;
-  if (dur.weeks === 0) delete dur.weeks;
   if (dur.months === 0) delete dur.months;
   if (dur.days === 0) delete dur.days;
   return dur;

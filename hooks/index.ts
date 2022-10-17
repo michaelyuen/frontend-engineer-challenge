@@ -12,13 +12,13 @@ export const useCountdown = (endDate: DeadlineValue) => {
   const isInPast = isPast(endDate);
   const initialTimeRemaining = isInPast
     ? defaultTimeRemaining
-    : getTimeRemaining(endDate);
+    : getTimeRemaining({ endDate });
   const [timeRemaining, setTimeRemaining] = useState(initialTimeRemaining);
 
   useEffect(() => {
     if (!isInPast) {
       const timer = window.setInterval(
-        () => setTimeRemaining(getTimeRemaining(endDate)),
+        () => setTimeRemaining(getTimeRemaining({ endDate })),
         1000
       );
       return () => clearInterval(timer);

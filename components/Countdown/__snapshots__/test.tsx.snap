@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Countdown matches snapshot for a deadline in the past 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe ghGHRX"
+  >
+    <h1>
+      Take Home Test
+    </h1>
+    <p>
+      Time until Sunday, October 17th, 2021 at 8:00 AM
+    </p>
+    <div
+      class="sc-gswNZR gYyeuC"
+    >
+      <div
+        class="sc-jSUZER hDXOka"
+      >
+        <div
+          class="sc-gKPRtg iWYzYk"
+        >
+          <div
+            class="top next"
+          >
+            0
+          </div>
+          <div
+            class="flipper"
+          >
+            <div
+              class="bottom"
+            >
+              0
+            </div>
+            <div
+              class="top"
+            >
+              0
+            </div>
+          </div>
+          <div
+            class="bottom current"
+          >
+            0
+          </div>
+        </div>
+        <p>
+          hours
+        </p>
+      </div>
+      <div
+        class="sc-jSUZER hDXOka"
+      >
+        <div
+          class="sc-gKPRtg iWYzYk"
+        >
+          <div
+            class="top next"
+          >
+            0
+          </div>
+          <div
+            class="flipper"
+          >
+            <div
+              class="bottom"
+            >
+              0
+            </div>
+            <div
+              class="top"
+            >
+              0
+            </div>
+          </div>
+          <div
+            class="bottom current"
+          >
+            0
+          </div>
+        </div>
+        <p>
+          minutes
+        </p>
+      </div>
+      <div
+        class="sc-jSUZER hDXOka"
+      >
+        <div
+          class="sc-gKPRtg iWYzYk"
+        >
+          <div
+            class="top next"
+          >
+            0
+          </div>
+          <div
+            class="flipper"
+          >
+            <div
+              class="bottom"
+            >
+              0
+            </div>
+            <div
+              class="top"
+            >
+              0
+            </div>
+          </div>
+          <div
+            class="bottom current"
+          >
+            0
+          </div>
+        </div>
+        <p>
+          seconds
+        </p>
+      </div>
+    </div>
+    <p
+      class="sc-dkrFOg eRASOh"
+    >
+      Your deadline has passed!
+      <br />
+      <br />
+      Use the Reset button to update your deadline.
+    </p>
+    <button
+      class="sc-eDvSVe lmyjav"
+      type="button"
+    >
+      Reset
+    </button>
+  </div>
+</div>
+`;

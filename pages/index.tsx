@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({
     deadlineValue: initialDeadlineValue,
   });
   const resetFormData = () =>
-    setFormData({ deadlineName: "", deadlineValue: "" as DeadlineValue });
+    setFormData({ deadlineName: "", deadlineValue: "" });
   const [isCountdownStarted, setCountdownStarted] = useState(
     !!(initialDeadlineName && initialDeadlineValue)
   );
@@ -87,8 +87,7 @@ const Home: NextPage<HomeProps> = ({
         {isCountdownStarted && (
           <Countdown
             deadlineName={formData.deadlineName}
-            deadlineValue={formData.deadlineValue}
-            isLoading={typeof window === "undefined"}
+            deadlineValue={formData.deadlineValue as DeadlineValue}
             onReset={onReset}
           />
         )}

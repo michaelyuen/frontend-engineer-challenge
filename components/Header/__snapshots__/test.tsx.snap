@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot 1`] = `
+<div>
+  <header
+    class="sc-bcXHqe bcxMoQ"
+  >
+    <div
+      aria-label="Koala logo"
+      role="img"
+    />
+    <p>
+      <span>
+        FE Coding Challenge
+      </span>
+      <span>
+        Frontend Engineer Coding Challenge
+      </span>
+    </p>
+  </header>
+</div>
+`;

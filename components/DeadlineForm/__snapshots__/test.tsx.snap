@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeadlineForm matches snapshot 1`] = `
+<div>
+  <form
+    aria-label="Deadline Form"
+    class="sc-bcXHqe sc-gswNZR iyTodM"
+    name="Deadline Form"
+    novalidate=""
+  >
+    <h1>
+      Deadline Countdown
+    </h1>
+    <label
+      for="deadline-name"
+    >
+      What's the deadline?
+    </label>
+    <input
+      aria-label="Enter name for deadline"
+      aria-required="true"
+      class="sc-pyfCe dfbbuZ"
+      id="deadline-name"
+      name="deadlineName"
+      required=""
+      type="text"
+      value=""
+    />
+    <label
+      for="deadline-date-time"
+    >
+      When is it?
+    </label>
+    <input
+      aria-label="Enter date and time for deadline"
+      aria-required="true"
+      class="sc-pyfCe dfbbuZ"
+      id="deadline-date-time"
+      min="2022-10-16T22:28"
+      name="deadlineValue"
+      required=""
+      type="datetime-local"
+      value=""
+    />
+    <button
+      class="sc-iBYQkv MerZa"
+      disabled=""
+      type="submit"
+    >
+      Start the countdown!
+    </button>
+  </form>
+</div>
+`;

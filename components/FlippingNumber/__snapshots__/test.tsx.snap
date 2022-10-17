@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlippingNumber matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe gcRcBW"
+  >
+    <div
+      class="sc-gswNZR hIbURE"
+    >
+      <div
+        class="top next"
+      >
+        59
+      </div>
+      <div
+        class="flipper"
+      >
+        <div
+          class="bottom"
+        >
+          59
+        </div>
+        <div
+          class="top"
+        >
+          59
+        </div>
+      </div>
+      <div
+        class="bottom current"
+      >
+        59
+      </div>
+    </div>
+    <p>
+      Seconds
+    </p>
+  </div>
+</div>
+`;

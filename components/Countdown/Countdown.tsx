@@ -1,13 +1,13 @@
 import { format } from "date-fns";
 import { CountdownContainer, NumbersContainer, Warning } from "./styles";
 import { Button, ButtonProps } from "../Button";
-import { DeadlineFormData } from "../DeadlineForm";
+import { DeadlineFormData, DeadlineValue } from "../DeadlineForm";
 import { FlippingNumber } from "../FlippingNumber";
 import { useCountdown, useHasMounted } from "../../hooks";
 
 export interface CountdownProps extends DeadlineFormData {
   buttonProps?: ButtonProps;
-  isLoading: boolean;
+  deadlineValue: DeadlineValue;
   onReset(): void;
 }
 

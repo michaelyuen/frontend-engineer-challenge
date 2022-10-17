@@ -13,7 +13,7 @@ export type DeadlineValue =
   `${number}${number}${number}${number}-${number}${number}-${number}${number}T${number}${number}:${number}${number}`;
 export type DeadlineFormData = {
   deadlineName: string;
-  deadlineValue: DeadlineValue;
+  deadlineValue: "" | DeadlineValue;
 };
 
 export interface DeadlineFormProps extends DeadlineFormData {
@@ -35,11 +35,13 @@ export const DeadlineForm: React.FC<DeadlineFormProps> = ({
   const [deadlineValueError, setDeadlineValueError] = useState<string>();
 
   useEffect(() => {
-    const isInPast = isPast(deadlineValue);
-    if (isInPast) {
-      setDeadlineValueError("Please select a date and time in the future");
-    } else {
-      setDeadlineValueError("");
+    if (deadlineValue) {
+      const isInPast = isPast(deadlineValue);
+      if (isInPast) {
+        setDeadlineValueError("Please select a date and time in the future");
+      } else {
+        setDeadlineValueError("");
+      }
     }
   }, [deadlineValue]);
 
