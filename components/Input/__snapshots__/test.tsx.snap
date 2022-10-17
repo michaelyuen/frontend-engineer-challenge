@@ -4,7 +4,7 @@ exports[`Input matches snapshot 1`] = `
 <div>
   <input
     aria-label="mock aria label"
-    class="sc-bcXHqe iggXoH"
+    class="sc-dkrFOg cnqJn"
     type="text"
   />
 </div>

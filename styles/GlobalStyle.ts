@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import { breakpoints } from "./breakpoints";
 
 export interface Theme {
   backgroundColor: string;
@@ -29,9 +28,12 @@ export const GlobalStyle = createGlobalStyle`
       --border-color: ${theme.borderColor};
       --border-radius: ${theme.borderRadius};
       --color: ${theme.fontColor};
+      --error-color: #f85149;
       --fontFamily: ${theme.fontFamily};
-      --fontSize: ${theme.fontSize};
+      // --fontSize: ${theme.fontSize};
+      --fontSize: 16px;
       --logo: url("/koala-logo-light.png");
+      --warning-color: yellow;
     `}
   }
 
@@ -42,9 +44,10 @@ export const GlobalStyle = createGlobalStyle`
       --border-color: #30363d;
       --border-radius: 6px;
       --color: #c9d1d9;
-      --logo: url("/koala-logo-dark.png");
-      /* --card-background-color: #161b22;
       --error-color: #f85149;
+      --logo: url("/koala-logo-dark.png");
+      --warning-color: yellow;
+      /* --card-background-color: #161b22;
       --link-color: #58a6ff; */
     }
   }
@@ -71,13 +74,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    align-items: center;
     background-image: var(--background-image);
-    background-repeat: no-repeat, repeat;
     background-position: bottom center;
+    background-repeat: no-repeat, repeat;
     background-size: contain;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
   }
 
   /* a {

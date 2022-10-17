@@ -1,22 +1,44 @@
+import { useEffect, useState } from "react";
 import { DeadlineFormContainer } from "./styles";
+import { Button, ButtonProps } from "../Button";
+import { FormProps } from "../Form";
 import { Input, InputProps } from "../Input";
+import { isPast } from "../../utils";
 
-export interface DeadlineFormProps {
-  deadlineValue?: string;
-  disabled: boolean;
-  nameValue?: string;
+export type DeadlineFormData = {
+  deadlineName: string;
+  deadlineValue: string;
+};
+
+export interface DeadlineFormProps extends DeadlineFormData {
+  buttonProps?: ButtonProps;
+  error?: string;
   onChange: InputProps["onChange"];
-  onSubmit(data: any): void;
+  onSubmit: FormProps["onSubmit"];
 }
 
 export const DeadlineForm: React.FC<DeadlineFormProps> = ({
+  buttonProps,
+  deadlineName,
   deadlineValue,
-  disabled,
-  nameValue,
+  error,
   onChange,
   onSubmit,
   ...props
 }) => {
+  const [deadlineValueError, setDeadlineValueError] = useState<string>();
+
+  useEffect(() => {
+    const isInPast = isPast(deadlineValue);
+    if (isInPast) {
+      setDeadlineValueError("Please select a date and time in the future");
+    } else {
+      setDeadlineValueError("");
+    }
+  }, [deadlineValue]);
+
+  const isDisabled = !(deadlineName && deadlineValue) || deadlineValueError;
+
   return (
     <DeadlineFormContainer
       aria-label="Deadline Form"
@@ -25,29 +47,37 @@ export const DeadlineForm: React.FC<DeadlineFormProps> = ({
       onSubmit={onSubmit}
       {...props}
     >
-      <h1>Countdown to the Deadline</h1>
+      <h1>Deadline Countdown</h1>
 
       <label htmlFor="deadline-name">What&apos;s the deadline?</label>
       <Input
         aria-label="Enter name for deadline"
+        aria-required="true"
         id="deadline-name"
-        name="name"
+        name="deadlineName"
         onChange={onChange}
-        value={nameValue}
+        required
+        value={deadlineName}
       />
 
       <label htmlFor="deadline-date-time">When is it?</label>
       <Input
         aria-label="Enter date and time for deadline"
+        aria-required="true"
+        error={deadlineValueError}
         id="deadline-date-time"
-        name="deadline"
+        min={new Date()
+          .toLocaleString("sv", { dateStyle: "short", timeStyle: "short" })
+          .replace(" ", "T")}
+        name="deadlineValue"
         onChange={onChange}
+        required
         type="datetime-local"
         value={deadlineValue}
       />
-      <button disabled={disabled} type="submit">
+      <Button disabled={isDisabled} type="submit" {...buttonProps}>
         Start the countdown!
-      </button>
+      </Button>
     </DeadlineFormContainer>
   );
 };
